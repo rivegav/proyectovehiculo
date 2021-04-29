@@ -15,8 +15,7 @@ public class Principal
      */
     public Principal()
     {
-        // initialise instance variables
-        x = 0;
+        int x = 6;
     }
 
     /**
