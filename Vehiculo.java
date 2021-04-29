@@ -1,19 +1,19 @@
 
 /**
- * Write a description of class C here.
+ * Write a description of class Vehiculo here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class C
+public class Vehiculo
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class C
+     * Constructor for objects of class Vehiculo
      */
-    public C()
+    public Vehiculo()
     {
         // initialise instance variables
         x = 0;
