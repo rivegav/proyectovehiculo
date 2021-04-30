@@ -26,4 +26,25 @@ public class Sensor
         return status;
     }
     
+   public static String sensorLibre(){
+        String available = "";
+        for(int i=0;i<sensores.length;i++){
+            for(int j=0;j<sensores[0].length;j++){
+                if(sensores[i][j].getStatus()==0){
+                    availabre += "En el piso "+i+", espacio "+j+" hay un lugar libre";
+                }
+            }
+        }
+        return available;
+    }
+    public static String sensoresStatus(){
+        String available = "";
+        for(int i=0;i<sensores.length;i++){
+            for(int j=0;j<sensores[0].length;j++){
+                available += "Piso: "+i+". Espacio: "+j+". "+Sensor.sensores[i][j].toString()+"\n";
+            }
+        }
+        return available;
+    }
+   
 }
