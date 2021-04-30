@@ -137,7 +137,7 @@ public class Principal{
                       System.out.println("9. Mostrar vehículos por valor comercial.");
                       num = scan.nextInt();
         }
-                System.out.println("Cerrando terminal...");
+                System.out.println("Cerrando programa...");
     }
 }
       
