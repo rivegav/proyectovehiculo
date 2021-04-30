@@ -47,15 +47,15 @@ public class Principal{
                             System.out.println("Ingrese el piso y el espacio que desea parquear su vehiculo en: ");
                             int piso=scan.nextInt();
                             int espacio= scan.nextInt();
-                            if(Vehiculo.cantidad<=Vehiculo.getTamaño()){
-                                if(Sensor.sensores[piso][espacio].getEstado()==0){
+                            if(Vehiculo.cantidad<=Vehiculo.getSize()){
+                                if(Sensor.sensores[piso][espacio].getStatus()==0){
                                     System.out.println("Ingrese por favor placa, marca y color");
                                     String placa = scan.next();
-                                    String marca = scan.next();
+                                    String brand = scan.next();
                                     String color = scan.next();
                                     
-                                    Vehiculo.vehiculo[piso][espacio] = new Vehiculo(placa, marca,color);
-                                    Sensor.sensores[piso][espacio].setEstado(1);
+                                    Vehiculo.vehiculo[piso][espacio] = new Vehiculo(placa, brand,color);
+                                    Sensor.sensores[piso][espacio].setStatus(1);
                                     
                                     System.out.println(Vehiculo.vehiculo[piso][espacio]);
                                 } else {
@@ -74,12 +74,12 @@ public class Principal{
                                  if(Sensor.sensores[piso][espacio].getEstado()==0){
                                       System.out.println("Ingrese por favor placa, marca, color y valor comercial del vehículo.");
                                       String placa = scan.next();
-                                      String marca = scan.next();
+                                      String brand = scan.next();
                                       String color = scan.next();
-                                      int valor = scan.nextInt();
+                                      int value = scan.nextInt();
                                         
-                                      Vehiculo.vehiculo[piso][espacio]= new Vehiculo (placa, marca,color,valor);
-                                      Sensor.sensores[piso][espacio].setEstado(1);
+                                      Vehiculo.vehiculo[piso][espacio]= new Vehiculo (placa, brand ,color,value);
+                                      Sensor.sensores[piso][espacio].setStatus(1);
                                         
                                       System.out.println(Vehiculo.vehiculo[piso][espacio]);
                                 } else {
@@ -93,20 +93,20 @@ public class Principal{
                             System.out.println(Vehiculo.toStringVehiculos());
                             break;
                         case 5:
-                            System.out.println("Hay " +Vehiculo.cantidad+ " vehículo(s) estacionado(s).");
+                            System.out.println("Hay " +Vehiculo.size+ " vehículo(s) estacionado(s).");
                             break;
                         case 6:
                             System.out.println("Ingrese el piso y el espacio que desea verificar: ");
                             piso=scan.nextInt();
                             espacio= scan.nextInt();
-                            if(Sensor.sensores[piso][espacio].getEstado()==0){
-                                System.out.println("Estado: "+Sensor.sensores[piso][espacio].getEstado()+" (LIBRE)");
+                            if(Sensor.sensores[piso][espacio].getStatus()==0){
+                                System.out.println("Estado: "+Sensor.sensores[piso][espacio].getStatus()+" (LIBRE)");
                             } else {
-                                System.out.println("Estado: "+Sensor.sensores[piso][espacio].getEstado()+" (OCUPADO)");
+                                System.out.println("Estado: "+Sensor.sensores[piso][espacio].getStatus()+" (OCUPADO)");
                             }
                             break;
                         case 7:
-                            System.out.println(Sensor.sensoresEstado());
+                            System.out.println(Sensor.sensoresStatus());
                             break;
                             
                         case 8:
@@ -115,8 +115,8 @@ public class Principal{
                             System.out.println(Vehiculo.vehiculosColor(color));
                             break;
                         case 9:
-                            Vehiculo[] arr = Vehiculo.ordenadosValor(Vehiculo.vehiculo);
-                            for(int i=0;i<Vehiculo.cantidad;i++){
+                            Vehiculo[] arr = Vehiculo.ordenadosValue(Vehiculo.vehiculo);
+                            for(int i=0;i<Vehiculo.size;i++){
                                 System.out.println(arr[i]);
                             }
                             break;
